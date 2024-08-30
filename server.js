@@ -12,6 +12,12 @@ const app = express();
 
 // Middlewares
 app.use('/api/v1/users', userRoutes);
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors({
+    origin: ['http://localhost:3010', ''],
+    credentials: true
+}))
 
 const PORT = process.env.PORT || 5001;
 
