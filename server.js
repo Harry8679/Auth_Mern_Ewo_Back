@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 dotenv.config();
+const errorHandler = require('./middlewares/error.middleware');
 
 const userRoutes = require('./routes/user.route');
 
@@ -17,7 +18,9 @@ app.use(cookieParser());
 app.use(cors({
     origin: ['http://localhost:3010', 'https://auth-mern-ewo-front-v5hn.vercel.app/'],
     credentials: true
-}))
+}));
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5001;
 
