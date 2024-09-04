@@ -32,6 +32,20 @@ const userSchema = mongoose.Schema({
         type: String,
         default: 'bio'
     },
+    role: {
+        type: String,
+        default: true,
+        default: 'subscriber' // subscriber, author, admin, suspended
+    },
+    isVerified: {
+        type: Boolean,
+        default: false,
+    },
+    userAgent: {
+        type: Array,
+        required: true,
+        default: []
+    }
 }, { 
     timestamps: true,
     minimize: false
