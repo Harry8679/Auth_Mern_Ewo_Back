@@ -4,4 +4,8 @@ const getAllUsers = asyncHandler(async(req, res) => {
     res.send('Get All Users');
 });
 
-module.exports = { getAllUsers };
+const register = asyncHandler(async(req, res) => {
+    res.send('Register');
+});
+
+module.exports = { getAllUsers, register };
