@@ -15,7 +15,7 @@ app.use('/api/v1/users', userRoutes);
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ['http://localhost:3010', ''],
+    origin: ['http://localhost:3010', 'https://auth-mern-ewo-front-v5hn.vercel.app/'],
     credentials: true
 }))
 
